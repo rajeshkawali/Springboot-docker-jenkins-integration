@@ -9,3 +9,24 @@ To change image name:
 
 To push the image to docker hub:
 >docker push rajeshkawali/springboot-docker-jenkins
+
+--------------------------------------------------------------------------------------------------------------
+https://hub.docker.com/r/bitnami/jenkins
+
+To pull the image:
+docker pull bitnami/jenkins:latest
+
+To create network:
+docker network create jenkins-network
+
+To create volume:
+docker volume create --name jenkins_data
+
+To run the jenkins: (default-> UN-user and PW-bitnami)
+docker run -d -p 80:8080 --name jenkins --network jenkins-network --volume jenkins_data:/bitnami/jenkins bitnami/jenkins:latest
+
+To run the jenkins with custom credentials:
+docker run -d -p 80:8080 --name jenkins --env JENKINS_USERNAME=admin --env JENKINS_PASSWORD=admin --network jenkins-network --volume jenkins_data:/bitnami/jenkins bitnami/jenkins:latest
+
+To access Jenkins url:
+http://127.0.0.1/job/springboot-docker-jenkins/
