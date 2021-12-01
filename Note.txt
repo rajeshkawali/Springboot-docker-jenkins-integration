@@ -1,0 +1,11 @@
+To Build image:
+>docker build -t springboot-docker-jenkins.jar .
+
+To Run the image:
+>docker run -p 8090:8090 springboot-docker-jenkins.jar
+
+To change image name:
+>docker tag springboot-docker-jenkins.jar rajeshkawali/springboot-docker-jenkins
+
+To push the image to docker hub:
+>docker push rajeshkawali/springboot-docker-jenkins
